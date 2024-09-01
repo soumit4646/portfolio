@@ -7,7 +7,7 @@ import { Button } from "@radix-ui/themes";
 
 const Hero = () => {
   return (
-    <div className="max-w-6xl mx-auto">
+    <div className="w-[90vw] max-w-6xl mx-auto">
       <div className="pt-20 flex flex-col gap-5">
         <p className="text-center text-2xl md:text-2xl lg:text-4xl">
           Hi, my name is
