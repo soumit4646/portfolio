@@ -17,3 +17,18 @@
 .footer {
   box-shadow: var(--shadow-2);
 }
+
+.child {
+  height: 100% !important;
+}
+
+.box {
+  content: '';
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  right: calc(100% + 9px);
+  top: 5;
+  border: 2px solid white;
+}

@@ -1,7 +1,7 @@
 import {
   CaretDownIcon,
-  DiscordLogoIcon,
   GitHubLogoIcon,
+  HamburgerMenuIcon,
   InstagramLogoIcon,
   LinkedInLogoIcon,
   MoonIcon,
@@ -9,7 +9,15 @@ import {
   TwitterLogoIcon,
 } from "@radix-ui/react-icons";
 
-import { Button, Flex, Heading, Link, Popover } from "@radix-ui/themes";
+import {
+  Button,
+  DropdownMenu,
+  Flex,
+  Heading,
+  Link,
+  Popover,
+} from "@radix-ui/themes";
+import { NavLink } from "react-router-dom";
 
 const Navbar = ({ theme, setTheme }) => {
   const changeTheme = () => {
@@ -18,28 +26,52 @@ const Navbar = ({ theme, setTheme }) => {
   };
 
   return (
-    <div className="p-3 flex items-center justify-around navbar bg-opacity-100 sticky top-0 z-50 bg-inherit">
+    <div className="p-3 flex items-center justify-around navbar bg-opacity-100 top-0 z-50 bg-inherit">
       <Heading size="7">soumit.xyz</Heading>
+      <div className="md:hidden">
+        <DropdownMenu.Root>
+          <DropdownMenu.Trigger>
+            <Button variant="soft">
+              <HamburgerMenuIcon />
+            </Button>
+          </DropdownMenu.Trigger>
+          <DropdownMenu.Content>
+            <div className="flex flex-col gap-3">
+              <NavLink to={"/"}>Home</NavLink>
+              <NavLink to={"/education"}>Education</NavLink>
+              <NavLink to={"/skills"}>Skills</NavLink>
+              <NavLink to={"/projects"}>Projects</NavLink>
+            </div>
+            <DropdownMenu.Separator />
+            <div>
+              <div className="flex gap-3 items-center">
+                <Link href="#" color="gray">
+                  Blog
+                </Link>
+                <Button variant="ghost">
+                  <Link href="https://github.com/soumit4646" target="_blank">
+                    <GitHubLogoIcon />
+                  </Link>
+                </Button>
+                <Button variant="ghost" onClick={changeTheme}>
+                  {theme === "dark" ? (
+                    <SunIcon color="gray" />
+                  ) : (
+                    <MoonIcon color="gray" />
+                  )}
+                </Button>
+              </div>
+            </div>
+          </DropdownMenu.Content>
+        </DropdownMenu.Root>
+      </div>
 
-      <div className="flex items-center gap-6">
-        <Link href="#" color="gray" highContrast underline="none">
-          About Me
-        </Link>
-        <Link href="#" color="gray" highContrast underline="none">
-          Education
-        </Link>
-        <Link href="#skills" color="gray" highContrast underline="none">
-          Skils
-        </Link>
-        <Link href="#projects" color="gray" highContrast underline="none">
-          Projects
-        </Link>
-
-        <Link href="#contact-me" color="gray" highContrast underline="none">
-          Contact Me
-        </Link>
-
-        {/* <Popover.Root>
+      <div className="flex items-center gap-6 hidden md:flex">
+        <NavLink to={"/"}>Home</NavLink>
+        <NavLink to={"/education"}>Education</NavLink>
+        <NavLink to={"/skills"}>Skills</NavLink>
+        <NavLink to={"/projects"}>Projects</NavLink>
+        <Popover.Root>
           <Popover.Trigger>
             <div className="flex items-center gap-1">
               <Link href="#" color="gray" highContrast underline="none">
@@ -53,10 +85,7 @@ const Navbar = ({ theme, setTheme }) => {
               <Link href="https://instagram.com/soumit4646" target="_blank">
                 <InstagramLogoIcon />
               </Link>
-              <Link href="https://discord.com/soumit4646" target="_blank">
-                <DiscordLogoIcon />
-              </Link>
-              <Link href="https://linkedin.com/soumit4646" target="_blank">
+              <Link href="https://linkedin.com/in/soumit4646" target="_blank">
                 <LinkedInLogoIcon />
               </Link>
               <Link href="https://x.com/soumitsatiar" target="_blank">
@@ -64,20 +93,20 @@ const Navbar = ({ theme, setTheme }) => {
               </Link>
             </Flex>
           </Popover.Content>
-        </Popover.Root> */}
+        </Popover.Root>
       </div>
 
-      <div className="flex gap-8 items-center">
-        <Link href="#" color="gray">
-          Blog
-        </Link>
+      <div className="flex gap-8 items-center hidden md:flex">
+        <Link href="#" color="gray">Blog</Link>
         <Button variant="ghost">
-          <Link href="https://github.com/soumit4646" target="_blank">
-            <GitHubLogoIcon />
-          </Link>
+          <Link href="https://github.com/soumit4646" target="_blank"><GitHubLogoIcon /></Link>
         </Button>
         <Button variant="ghost" onClick={changeTheme}>
-          {theme === "dark" ? <SunIcon color="gray"/> : <MoonIcon color="gray"/>}
+          {theme === "dark" ? (
+            <SunIcon color="gray" />
+          ) : (
+            <MoonIcon color="gray" />
+          )}
         </Button>
       </div>
     </div>
