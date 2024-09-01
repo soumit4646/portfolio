@@ -13,7 +13,7 @@
             "dest": "/"
         },
         {
-            "src": "/projects",
+            "src": "/skills",
             "dest": "/"
         }
     ]
