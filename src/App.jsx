@@ -47,7 +47,7 @@ function App() {
           </Container> */}
             <div className="flex-1">
               <Routes>
-                <Route path="/" element={<Hero />} />
+                <Route path="/" element={<Hero />}/>
                 <Route path="/projects" element={<Projects />} />
                 <Route path="/skills" element={<Skills />} />
                 <Route path="/education" element={<Education />} />
