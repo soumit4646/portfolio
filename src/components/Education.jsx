@@ -15,7 +15,7 @@ export default function () {
                         </p>
                         <p className="text-xl">
                             Completed my 10th standard from Islampur High School
-                            with a score of 600 out of 700
+                            with a score of 576 out of 700
                         </p>
                         <div className="box bg-blue-400"></div>
                     </div>
@@ -25,8 +25,8 @@ export default function () {
                             Islampur High School
                         </p>
                         <p className="text-xl">
-                            Completed my 10th standard from Islampur High School
-                            with a score of 600 out of 700
+                            Completed my 12th standard from Islampur High School
+                            with a score of 446 out of 500
                         </p>
                         <div className="box bg-blue-400"></div>
                     </div>
@@ -37,7 +37,7 @@ export default function () {
                         </p>
                         <p className="text-xl">
                             Completed my B.tech in Computer Science and
-                            Engineering from UEM Kolkata with a GPA of 8.70.
+                            Engineering from UEM Kolkata with a DGPA of 8.70.
                         </p>
                         <div className="box bg-blue-400"></div>
                     </div>

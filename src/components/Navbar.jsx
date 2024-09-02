@@ -26,8 +26,8 @@ const Navbar = ({ theme, setTheme }) => {
     };
 
     return (
-        <div className="p-3 flex items-center justify-around navbar bg-opacity-100 top-0 z-50 bg-inherit">
-            <Heading size="7">soumit.xyz</Heading>
+        <div className="p-3 flex items-center justify-around navbar sticky top-0 bg-transparent z-50 bg-transparent backdrop-blur-3xl">
+            <Heading size="7">soumit</Heading>
             <div className="md:hidden">
                 <DropdownMenu.Root>
                     <DropdownMenu.Trigger>
